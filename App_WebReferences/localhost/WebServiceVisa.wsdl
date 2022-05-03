@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:portType name="WebServiceVisaSoap" />
+  <wsdl:portType name="WebServiceVisaSoap12" />
+  <wsdl:binding name="WebServiceVisaSoap" type="tns:WebServiceVisaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceVisaSoap12" type="tns:WebServiceVisaSoap12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:service name="WebServiceVisa">
+    <wsdl:port name="WebServiceVisaSoap" binding="tns:WebServiceVisaSoap">
+      <soap:address location="http://localhost:57556/WebsiteClinic/WebServiceVisa.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceVisaSoap12" binding="tns:WebServiceVisaSoap12">
+      <soap12:address location="http://localhost:57556/WebsiteClinic/WebServiceVisa.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
